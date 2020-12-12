@@ -11,10 +11,10 @@ public class Calc {
 
         String[] calcSplit  = calc.split(" ");
 
-        float num1 = Float.parseFloat(calcSplit[0]);
-        float num2 = Float.parseFloat(calcSplit[2]);
+        double num1 = Double.parseDouble(calcSplit[0]);
+        double num2 = Double.parseDouble(calcSplit[2]);
         String operator = calcSplit[1];
-        float ans = 0.0F;
+        double ans = 0.0;
         int out = 0;
         boolean useInt = false;
 
@@ -36,7 +36,7 @@ public class Calc {
             break;
 
 	    case ("^"):
-	        ans = (float)Math.pow(num1, num2);
+	        ans = Math.pow(num1, num2);
 	    break;	
                                     
             default:
@@ -45,7 +45,7 @@ public class Calc {
         }
 
         if (calcSplit.length > 4) {
-            float num3 = Float.parseFloat(calcSplit[4]);
+            double num3 = Double.parseDouble(calcSplit[4]);
             switch (calcSplit[3]) {
                 case ("+"):
                     ans = (ans + num3);
@@ -64,7 +64,7 @@ public class Calc {
                 break;
 
                 case ("^"):
-	            ans = (float)Math.pow(ans, num3);
+	            ans = Math.pow(ans, num3);
 		break;
                                          
                 default:
